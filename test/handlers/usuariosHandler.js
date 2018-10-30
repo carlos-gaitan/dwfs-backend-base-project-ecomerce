@@ -7,16 +7,15 @@ var utils = require('../utils')
 
 describe('Example Handler', function() {
   before(function(done) {
-    this.timeout(10000);
     utils.cleanDB(function(){
       // Adding two intial examples
       ExampleModel.add({ field1: 'Example 1' }, function() {
         ExampleModel.add({ field1: 'Example 2' }, function() {
-          done();
-        });
-      });
-    }); 
-  });
+          done()
+        })
+      })
+    })    
+  })
 
   describe('GET /api/examples', function () {
     it('returns an examples list', function(done) {

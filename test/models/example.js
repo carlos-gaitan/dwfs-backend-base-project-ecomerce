@@ -4,6 +4,7 @@ var utils = require('../utils')
 
 describe('Example Model', function() {
   before(function(done) {
+    this.timeout(10000);
     utils.cleanDB(function(){
       // Adding two intial examples
       ExampleModel.add({ field1: 'Example 1' }, function() {
@@ -15,6 +16,7 @@ describe('Example Model', function() {
   })
 
   describe('#getAll', function () {
+    this.timeout(10000);
     it('returns all the examples', function(done) {
       ExampleModel.getAll(function(err, res) {
         expect(err).to.not.exist;
@@ -28,6 +30,7 @@ describe('Example Model', function() {
 
   describe('#add', function () {
     it('adds a new example', function(done) {
+      this.timeout(10000);
       ExampleModel.getAll(function(err, res) {
         var qty = res.length;
 

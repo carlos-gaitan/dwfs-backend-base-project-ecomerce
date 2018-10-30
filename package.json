@@ -4,7 +4,7 @@
   "description": "Base Project en Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha --recursive --exit"
+    "test": "cross-env NODE_ENV=test node_modules/.bin/mocha --recursive --exit"
   },
   "author": "Diego y Casu",
   "license": "ISC",
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
     "mocha": "^5.2.0",
     "supertest": "^3.3.0"
   }

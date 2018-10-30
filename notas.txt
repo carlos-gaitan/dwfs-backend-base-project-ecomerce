@@ -1,0 +1,11 @@
+tests:
+
+Charlie / Johanna :
+  - Agregar usuario, con caso de exito ( datos correctos y esperado )
+
+
+Juliana / Juan :
+  - si el correo existe, rechazar y devuelve error.
+  - si password es vacio o null o tiene longitud menor a 6, rechaza y devuelve error.
+  - si email no cumple con formato email, es vacio rechazar y emitir error.
+  
