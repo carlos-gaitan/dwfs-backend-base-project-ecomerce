@@ -14,7 +14,7 @@ describe('User Model', function() {
       var cantidad = null;
       UserModel.getAll(function (err,res) {
         if(!err) {
-          cantidad = res.length();
+          cantidad = res.lenght();
         }
       });
       UserModel.add({name: "Pepe", email: "pepe@pepe.pep", password: "pepepepepe1"}, function(err, res){
