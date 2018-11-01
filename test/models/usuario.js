@@ -6,6 +6,7 @@ describe('User Model', function() {
   before(function(done) {
     this.timeout(10000);
     utils.cleanDB(function(){
+      done();
     })   
   })
 
@@ -14,11 +15,12 @@ describe('User Model', function() {
       var cantidad = null;
       UserModel.getAll(function (err,res) {
         if(!err) {
-          cantidad = res.lenght();
+          cantidad = res.length;
         }
       });
       UserModel.add({name: "Pepe", email: "pepe@pepe.pep", password: "pepepepepe1"}, function(err, res){
         console.log(err,res);
+        done();
       });
 
       }
