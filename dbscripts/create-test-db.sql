@@ -13,17 +13,12 @@
 
 
 -- Volcando estructura de base de datos para ecomerce_test
+DROP DATABASE IF EXISTS `ecomerce_test`;
 CREATE DATABASE IF NOT EXISTS `ecomerce_test` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `ecomerce_test`;
 
-CREATE TABLE IF NOT EXISTS example_table (
-  id INT NOT NULL AUTO_INCREMENT,
-  field1 VARCHAR(255) NOT NULL,
-  PRIMARY KEY(id)
-);
-
-
 -- Volcando estructura para tabla ecomerce_test.categories
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `categoryId` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(80) NOT NULL,
@@ -32,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.example_table
+DROP TABLE IF EXISTS `example_table`;
 CREATE TABLE IF NOT EXISTS `example_table` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `field1` varchar(255) NOT NULL,
@@ -40,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `example_table` (
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.orders
+DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
   `orderId` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) NOT NULL DEFAULT 0,
@@ -52,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.products
+DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `productId` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -65,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.productsbycategories
+DROP TABLE IF EXISTS `productsbycategories`;
 CREATE TABLE IF NOT EXISTS `productsbycategories` (
   `productId` int(11) NOT NULL,
   `categoryId` int(11) NOT NULL,
@@ -76,6 +75,7 @@ CREATE TABLE IF NOT EXISTS `productsbycategories` (
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.productsbyorders
+DROP TABLE IF EXISTS `productsbyorders`;
 CREATE TABLE IF NOT EXISTS `productsbyorders` (
   `productId` int(11) NOT NULL,
   `orderId` int(11) NOT NULL,
@@ -88,6 +88,7 @@ CREATE TABLE IF NOT EXISTS `productsbyorders` (
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.user
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `userId` int(11) NOT NULL AUTO_INCREMENT,
   `password` varchar(100) NOT NULL,
@@ -100,6 +101,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.wishlist
+DROP TABLE IF EXISTS `wishlist`;
 CREATE TABLE IF NOT EXISTS `wishlist` (
   `userId` int(11) NOT NULL,
   `productId` int(11) NOT NULL,
