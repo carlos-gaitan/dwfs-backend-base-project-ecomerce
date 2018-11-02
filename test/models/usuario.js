@@ -19,7 +19,7 @@ describe('User Model', function() {
         }
       });
       UserModel.add({name: "Pepe", email: "pepe@pepe.pep", password: "pepepepepe1"}, function(err, res){
-        console.log(err,res);
+        //console.log(err,res);
         done();
       });
 
