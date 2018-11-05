@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `date` date NOT NULL,
   PRIMARY KEY (`orderId`),
   KEY `userId` (`userId`),
-  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`)
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- La exportación de datos fue deseleccionada.
@@ -88,8 +88,8 @@ CREATE TABLE IF NOT EXISTS `productsbyorders` (
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.user
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
   `userId` int(11) NOT NULL AUTO_INCREMENT,
   `password` varchar(100) NOT NULL,
   `email` varchar(200) NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
   KEY `productId` (`productId`),
   KEY `userId` (`userId`),
   CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`),
-  CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`)
+  CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- La exportación de datos fue deseleccionada.

@@ -36,6 +36,11 @@ Product.add = function(data ,cb){
     cb(error,null);
   }
 }
+
+Product.update = function(data, cb){
+
+}
+
 /*
 User.add = function (data, cb) {
   var sqlQuery = `INSERT INTO products (name, email, password, active)

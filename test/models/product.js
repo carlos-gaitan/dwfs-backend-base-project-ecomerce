@@ -4,13 +4,18 @@ var utils = require('../utils')
 
 describe('Product Model', function() {
   before(function(done) {
-    this.timeout(10000);
     utils.cleanDB(function(){
       done();
     })   
-  })
+  });
+  beforeEach(function(done){
+    utils.truncTables(function(){
+      done();
+    })
+  });
 
   describe('#add',function(){
+    
     it('add debe ser una funcion',function(done){
       expect(ProductModel.add).to.be.a('function');
       done();
@@ -136,6 +141,45 @@ describe('Product Model', function() {
         });
       });
     });
+  });
+
+  describe("#update Model Products", function(){
+    beforeEach(function(done){
+      utils.insertSampleData(function(){
+        done();
+      }) 
+    });
+    it('Update - should be a function',function(done){
+      expect(ProductModel.update).to.be.a('function');
+      done();
+    });
+    it("Update when all data is correct", function(done){
+      //done();
+    });
+    it("Do not update when :productId is missing", function(done){
+      //done()
+    });
+    it("update when :productId and :name have correct values", function(done){
+      //done();
+    });
+    it("update when :productId and :description have correct values", function(done){
+      //done();
+    });
+    it("update when :productId and :price have correct values", function(done){
+      //done();
+    });
+    it("update when :productId and :oldPrice have correct values", function(done){
+      //done();
+    });
+    it("update when :productId and :image have correct values", function(done){
+      //done();
+    });
 
   });
+
+
+
+
+
+
 });
