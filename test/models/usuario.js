@@ -3,13 +3,6 @@ var UserModel = require('../../app/models/usuario')
 var utils = require('../utils')
 
 describe('User Model', function() {
-  before(function(done) {
-    this.timeout(10000);
-    utils.cleanDB(function(){
-      done();
-    })   
-  })
-
   describe('#add',function(){
     it('Agrega un usuario con sus datos correctos', function(done) {
       var cantidad = null;

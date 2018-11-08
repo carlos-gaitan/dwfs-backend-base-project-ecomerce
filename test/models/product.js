@@ -3,19 +3,7 @@ var ProductModel = require('../../app/models/product')
 var utils = require('../utils')
 
 describe('Product Model', function() {
-  before(function(done) {
-    utils.cleanDB(function(){
-      done();
-    })   
-  });
-  beforeEach(function(done){
-    utils.truncTables(function(){
-      done();
-    })
-  });
-
   describe('#add',function(){
-    
     it('add debe ser una funcion',function(done){
       expect(ProductModel.add).to.be.a('function');
       done();
@@ -176,10 +164,4 @@ describe('Product Model', function() {
     });
 
   });
-
-
-
-
-
-
 });

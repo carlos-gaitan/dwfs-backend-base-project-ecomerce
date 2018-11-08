@@ -14,7 +14,7 @@
 
 -- Volcando estructura de base de datos para ecomerce_test
 DROP DATABASE IF EXISTS `ecomerce_test`;
-CREATE DATABASE IF NOT EXISTS `ecomerce_test` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE IF NOT EXISTS `ecomerce_test` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `ecomerce_test`;
 
 -- Volcando estructura para tabla ecomerce_test.categories
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `categoryId` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(80) NOT NULL,
   PRIMARY KEY (`categoryId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.example_table
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `example_table` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `field1` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.orders
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`orderId`),
   KEY `userId` (`userId`),
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.products
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `active` tinyint(3) unsigned NOT NULL DEFAULT 1,
   `image` text NOT NULL,
   PRIMARY KEY (`productId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.productsbycategories
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `productsbycategories` (
   KEY `productId` (`productId`),
   CONSTRAINT `productsbycategories_ibfk_1` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`categoryId`),
   CONSTRAINT `productsbycategories_ibfk_2` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.productsbyorders
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `productsbyorders` (
   KEY `productId` (`productId`),
   CONSTRAINT `productsbyorders_ibfk_1` FOREIGN KEY (`orderId`) REFERENCES `orders` (`orderId`),
   CONSTRAINT `productsbyorders_ibfk_2` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.user
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `active` tinyint(3) unsigned NOT NULL DEFAULT 1,
   PRIMARY KEY (`userId`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla ecomerce_test.wishlist
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
   KEY `userId` (`userId`),
   CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`),
   CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

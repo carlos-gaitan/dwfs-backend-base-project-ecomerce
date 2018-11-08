@@ -2,7 +2,21 @@ const execSQL = require('exec-sql');
 const path = require('path');
 require('dotenv').config({path: `${__dirname}/../.env.test`});
 
-module.exports.cleanDB = function (done) {
+before(function(done) {
+  //console.log("clean DB")
+  cleanDB(function(){
+    done();
+  })   
+});
+
+beforeEach(function(done) {
+  //console.log("trunc tables")
+  truncTables(function(){
+    done();
+  })   
+});
+
+function cleanDB(done) {
   execSQL.connect({
     database: process.env.DB_NAME,
     user: process.env.DB_USER,
@@ -20,7 +34,7 @@ module.exports.cleanDB = function (done) {
   });
 };
 
-module.exports.truncTables = function (done) {
+function truncTables(done) {
   execSQL.connect({
     database: process.env.DB_NAME,
     user: process.env.DB_USER,
@@ -37,6 +51,9 @@ module.exports.truncTables = function (done) {
     done();
   });
 };
+
+//module.exports.cleanDB = cleanDB;
+//module.exports.truncTables = truncTables;
 
 module.exports.insertSampleData = function (done) {
   execSQL.connect({
@@ -55,4 +72,3 @@ module.exports.insertSampleData = function (done) {
     done();
   });
 };
-
